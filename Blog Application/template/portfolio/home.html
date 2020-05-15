@@ -1,0 +1,34 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title_block %}
+  Ravi || Portfolio
+{% endblock %}
+{% block body_block %}
+<br>
+<div class="contaner">
+  <div class='home-page-div'>
+      <img class="home-page-img" src="{% static 'images/home-page1.jpg' %}" width="400" height="400">
+  </div>
+  <br><br>
+  <span class="logo-label-span">Portfolio</span>
+  <hr>
+  {% for i in portfolio_range %}
+  <div class="row">
+    {% for portfolio in portfolio_list %}
+      <div class="col">
+        <div class="portfolio-img-div">
+          <a href="{% if portfolio.url %}{{ portfolio.url }}{% else %}#{% endif %}" class="label-text">
+            <img class='portfolio-img' src="{{ portfolio.image.url }}" width="300" height="200">
+            <p class="logo-label-span">{{ portfolio.title }}</p><br><br>
+          </a>
+        </div>
+        <div>
+          <p>{{ portfolio.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+</div>
+{% endblock %}

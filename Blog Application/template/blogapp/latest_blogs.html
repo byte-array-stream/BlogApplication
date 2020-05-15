@@ -1,0 +1,12 @@
+<h3>Latest blogs:</h3>
+  <ul>
+    {% for blog in latest_blogs %}
+        <li><h6><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h6></li>
+    {% endfor %}
+  </ul>
+<h3>Most commented blogs:</h3>
+  <ul>
+    {% for blog in hieghest_commented_blogs %}
+        <li><h6><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h6></li>
+    {% endfor %}
+  </ul>

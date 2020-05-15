@@ -1,0 +1,43 @@
+{% extends 'common/base.html' %}
+  {% block title_block %}
+    Blog Post
+  {% endblock %}
+  {% block body_block %}
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="blogapp-header-div">
+          <h1>Blog</h1>
+          <h5>Ravi has written {{ blog_list_count }} blog{{ blog_list_count | pluralize }}</h5>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-md-8">
+          {% if tag_flag %}
+            <h5>Result list for tag "{{ tag.name }}":</h5>
+          {% endif %}
+          {% if blog_list %}
+            {% for blog in blog_list %}
+              <h3><a href="{{blog.get_absolute_url}}">{{ blog.title }}</a></h3>
+              <h6>This Post was published on {{ blog.published_date }} by {{ blog.author }}</h6>
+              <p>{{ blog.body | linebreaks | truncatewords:60 }}</p>
+              <b>Tags:</b> {% if blog.tags %}
+                          {% for tag in blog.tags.all %}
+                            <a href="{% url 'blog_list_diplay' tag.name %}" class="label-text"><span id="tag-span-decor" class="badge badge-secondary">{{ tag.name }}</span></a>
+                          {% endfor %}
+                      {% endif %}
+            <br><br>
+            {% endfor %}
+          {% else %}
+            <h1>No Rerords Found !!</h1>
+          {% endif %}
+        </div>
+        <div class="col-md-4">
+          <h4>Total Posts <span class="logo-span">{% total_post_count %}</span></h4>
+          <div>
+            {% latest_blog_posts %}
+          </div>
+        </div>
+      </div>
+      {% include "blogapp/paginator.html" with objects=post_list %}
+    </div>
+  {% endblock %}

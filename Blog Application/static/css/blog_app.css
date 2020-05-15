@@ -1,0 +1,79 @@
+html{
+  font-family: 'Lato', sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+p {
+  text-align: justify;
+}
+h1 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 4rem;
+  color: rgba(77, 78, 82) !important;
+}
+h2, h3, h4, h5, h6 {
+  color: rgba(0,0,0,.5) !important;
+}
+.label-text {
+  text-decoration: none !important;
+}
+#tag-span-decor {
+  font-size: 14px;
+}
+.logo-img {
+  height: 60px;
+  width: 60px;
+}
+.logo-label-span {
+  font-size: 2rem;
+  color: rgba(0,0,0,.5) !important
+}
+.navbar-nav .nav-link:hover, .logo-label-span:hover  {
+  color: rgba(0,0,0,1) !important;
+}
+.navbar-nav .nav-link {
+  color: rgba(0,0,0,.5) !important;
+  font-size: 1.5rem;
+}
+.home-page-div {
+  margin: auto;
+  height: 80%;
+  width: 70%;
+  box-shadow: 2px 2px 3px 3px rgba(0,0,0,.5) !important;
+}
+.home-page-img {
+  width: 100%;
+}
+.portfolio-img-div {
+  height: 55%;
+  width: 95%;
+}
+.portfolio-img-div:a:hover {
+  text-decoration: none;
+}
+.portfolio-img {
+  width: 100%;
+}
+/* Styling for Blog Application */
+.blogapp-header-div {
+  text-align: center;
+  align-items: center;
+}
+.blog-details-div {
+  text-align: center;
+}
+.blog-details-h2 {
+  color: rgba(0,0,0) !important;
+}
+.blog-details-h5 {
+  color: rgba(0, 123, 255); !important;
+  font-size: .9rem;
+}
+.blog-details-h6 {
+  color: rgba(0,0,0) !important;
+}
+/* Styling for Paginator */
+.pagination {
+  font-weight: bold;
+  font-size: .9rem;
+}

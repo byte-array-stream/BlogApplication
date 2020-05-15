@@ -1,0 +1,329 @@
+[INFO] [09/05/2020 06:28:12 PM] [views] [16228] [15248] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[ERROR] [09/05/2020 06:29:02 PM] [views] [16228] [13396] - [WinError 10061] No connection could be made because the target machine actively refused it
+[INFO] [09/05/2020 06:29:35 PM] [views] [16228] [1724] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [09/05/2020 06:32:57 PM] [views] [16184] [13800] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[ERROR] [09/05/2020 06:33:22 PM] [views] [16184] [12740] - [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 61, in share_blog_by_email
+    mail.send_mail(blog.title,blog.body,'durga.python.videos@gmail.com',['durga.python.videos01@gmail.com'], fail_silently=False)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\mail\__init__.py", line 60, in send_mail
+    return mail.send()
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\mail\message.py", line 276, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\mail\backends\smtp.py", line 62, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+[INFO] [09/05/2020 06:33:32 PM] [views] [16184] [13464] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [09/05/2020 06:33:49 PM] [views] [16184] [16168] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [09/05/2020 06:33:53 PM] [views] [16184] [8744] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [09/05/2020 06:56:46 PM] [views] [15968] [2596] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [09/05/2020 10:49:55 PM] [views] [8676] [18344] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [09/05/2020 10:50:00 PM] [views] [8676] [18344] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[ERROR] [09/05/2020 11:16:57 PM] [views] [15364] [19208] - name 'Like' is not defined
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 73, in like_blog
+    like_object = get_object_or_404(Like, blog_post_id = blog_id)
+NameError: name 'Like' is not defined
+[ERROR] [09/05/2020 11:16:57 PM] [views] [15364] [18256] - name 'Like' is not defined
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 73, in like_blog
+    like_object = get_object_or_404(Like, blog_post_id = blog_id)
+NameError: name 'Like' is not defined
+[ERROR] [09/05/2020 11:17:41 PM] [views] [10388] [19268] - No Likes matches the given query.
+Traceback (most recent call last):
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 76, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 417, in get
+    self.model._meta.object_name
+BlogApp.models.Likes.DoesNotExist: Likes matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 73, in like_blog
+    like_object = get_object_or_404(Likes, blog_post_id = blog_id)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 78, in get_object_or_404
+    raise Http404('No %s matches the given query.' % queryset.model._meta.object_name)
+django.http.response.Http404: No Likes matches the given query.
+[ERROR] [09/05/2020 11:17:42 PM] [views] [10388] [1944] - No Likes matches the given query.
+Traceback (most recent call last):
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 76, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 417, in get
+    self.model._meta.object_name
+BlogApp.models.Likes.DoesNotExist: Likes matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 73, in like_blog
+    like_object = get_object_or_404(Likes, blog_post_id = blog_id)
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 78, in get_object_or_404
+    raise Http404('No %s matches the given query.' % queryset.model._meta.object_name)
+django.http.response.Http404: No Likes matches the given query.
+[ERROR] [09/05/2020 11:20:31 PM] [views] [8120] [16904] - name 'Like' is not defined
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 75, in like_blog
+    like_object = Like()
+NameError: name 'Like' is not defined
+[ERROR] [09/05/2020 11:20:31 PM] [views] [8120] [4044] - name 'Like' is not defined
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 75, in like_blog
+    like_object = Like()
+NameError: name 'Like' is not defined
+[ERROR] [09/05/2020 11:21:06 PM] [views] [7280] [18764] - 'function' object has no attribute 'likes'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.likes += int(like_blog.likes)
+AttributeError: 'function' object has no attribute 'likes'
+[ERROR] [09/05/2020 11:21:06 PM] [views] [7280] [12848] - 'function' object has no attribute 'likes'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.likes += int(like_blog.likes)
+AttributeError: 'function' object has no attribute 'likes'
+[ERROR] [09/05/2020 11:23:15 PM] [views] [18512] [18452] - 'function' object has no attribute 'likes'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.likes = int(like_blog.likes) + 1
+AttributeError: 'function' object has no attribute 'likes'
+[ERROR] [09/05/2020 11:23:15 PM] [views] [18512] [7628] - 'function' object has no attribute 'likes'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.likes = int(like_blog.likes) + 1
+AttributeError: 'function' object has no attribute 'likes'
+[ERROR] [09/05/2020 11:27:33 PM] [views] [2560] [2880] - 'QuerySet' object has no attribute 'save'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.save()
+AttributeError: 'QuerySet' object has no attribute 'save'
+[ERROR] [09/05/2020 11:28:07 PM] [views] [2560] [14088] - 'QuerySet' object has no attribute 'save'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.save()
+AttributeError: 'QuerySet' object has no attribute 'save'
+[ERROR] [09/05/2020 11:28:07 PM] [views] [2560] [8440] - 'QuerySet' object has no attribute 'save'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.save()
+AttributeError: 'QuerySet' object has no attribute 'save'
+[ERROR] [09/05/2020 11:28:07 PM] [views] [2560] [14088] - 'QuerySet' object has no attribute 'save'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 78, in like_blog
+    like_object.save()
+AttributeError: 'QuerySet' object has no attribute 'save'
+[ERROR] [09/05/2020 11:37:55 PM] [views] [1332] [18420] - 'Likes' object has no attribute 'count'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 74, in like_blog
+    if(like_object.count() < 1):
+AttributeError: 'Likes' object has no attribute 'count'
+[ERROR] [09/05/2020 11:37:55 PM] [views] [1332] [15788] - 'Likes' object has no attribute 'count'
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 74, in like_blog
+    if(like_object.count() < 1):
+AttributeError: 'Likes' object has no attribute 'count'
+[ERROR] [09/05/2020 11:46:17 PM] [views] [19056] [8644] - 'blog_id'
+Traceback (most recent call last):
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'blog_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Development\Python\Django Projects\BlogProject\BlogApp\views.py", line 71, in like_blog
+    blog_id = request.GET['blog_id']
+  File "C:\Users\ravik\AppData\Local\Programs\Python\Python37\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'blog_id'
+[INFO] [10/05/2020 01:10:47 AM] [views] [13980] [11428] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:11:05 AM] [views] [13980] [14744] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:14:40 AM] [views] [13980] [17724] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:15:00 AM] [views] [13980] [9280] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:15:23 AM] [views] [13980] [15732] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:16:54 AM] [views] [13980] [14972] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:17:04 AM] [views] [13980] [16572] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [10/05/2020 01:17:07 AM] [views] [13980] [16572] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [10/05/2020 01:17:11 AM] [views] [13980] [14304] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/developer/'> developer
+[INFO] [10/05/2020 01:17:15 AM] [views] [13980] [14304] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:18:30 AM] [views] [13980] [4736] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [10/05/2020 01:18:36 AM] [views] [13980] [4736] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/development/'> development
+[INFO] [10/05/2020 01:18:39 AM] [views] [13980] [4736] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [13/05/2020 10:29:16 PM] [views] [18124] [10744] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [13/05/2020 10:47:40 PM] [views] [18052] [1020] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:02:17 AM] [views] [19152] [3916] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:09:12 AM] [views] [19152] [8928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:10:11 AM] [views] [19152] [11940] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:10:50 AM] [views] [19152] [19032] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:13:01 AM] [views] [12264] [18712] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:13:57 AM] [views] [12264] [17064] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:18:03 AM] [views] [12264] [15764] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:20:35 AM] [views] [13896] [18520] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:20:41 AM] [views] [13896] [7448] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [14/05/2020 12:20:45 AM] [views] [13896] [16564] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=%201'> None
+[INFO] [14/05/2020 12:25:28 AM] [views] [13896] [13796] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=%201'> None
+[INFO] [14/05/2020 12:25:32 AM] [views] [13896] [6376] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [14/05/2020 12:25:33 AM] [views] [13896] [6376] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=3'> None
+[INFO] [14/05/2020 12:26:15 AM] [views] [18752] [12936] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=3'> None
+[INFO] [14/05/2020 12:26:24 AM] [views] [18752] [17112] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [14/05/2020 11:26:27 AM] [views] [2840] [5584] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 12:14:57 PM] [views] [2840] [4256] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:41:28 PM] [views] [2840] [5708] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:41:29 PM] [views] [2840] [9920] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:42:21 PM] [views] [2840] [4060] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [14/05/2020 02:42:25 PM] [views] [2840] [4060] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [14/05/2020 02:43:03 PM] [views] [2840] [10368] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [14/05/2020 02:45:08 PM] [views] [2840] [4996] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:45:36 PM] [views] [2840] [5032] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:46:30 PM] [views] [2840] [8932] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:47:24 PM] [views] [2840] [9436] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 02:57:15 PM] [views] [2840] [1164] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 03:21:05 PM] [views] [2840] [9284] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [14/05/2020 03:22:38 PM] [views] [2840] [8204] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/development/'> development
+[INFO] [14/05/2020 10:06:33 PM] [views] [2936] [5504] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:24:01 AM] [views] [5492] [5864] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:28:37 AM] [views] [5492] [6700] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:28:53 AM] [views] [5492] [180] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:29:30 AM] [views] [5492] [8704] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/development/'> development
+[INFO] [15/05/2020 02:31:49 AM] [views] [5492] [3680] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/development/'> development
+[INFO] [15/05/2020 02:35:32 AM] [views] [5492] [9252] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:42:51 AM] [views] [5492] [9776] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:45:13 AM] [views] [5492] [8428] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:47:43 AM] [views] [5492] [5380] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:49:12 AM] [views] [5492] [3880] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:49:45 AM] [views] [5492] [8428] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:50:06 AM] [views] [5492] [1928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:50:45 AM] [views] [5492] [8092] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:52:55 AM] [views] [5492] [8652] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:53:56 AM] [views] [5492] [704] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:54:05 AM] [views] [5492] [4928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:55:21 AM] [views] [5492] [5608] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 02:55:53 AM] [views] [5492] [6616] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:00:46 AM] [views] [5492] [9000] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:03:14 AM] [views] [5492] [5644] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:05:03 AM] [views] [5492] [9456] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:06:06 AM] [views] [5492] [10032] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:06:11 AM] [views] [5492] [10032] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:10:06 AM] [views] [5492] [5232] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:10:57 AM] [views] [5492] [8080] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:11:47 AM] [views] [5492] [4028] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:11:59 AM] [views] [5492] [3740] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:12:10 AM] [views] [5492] [6052] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:12:38 AM] [views] [5492] [3584] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:14:15 AM] [views] [5492] [4280] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:15:26 AM] [views] [5492] [6212] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:15:46 AM] [views] [5492] [2080] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:15:58 AM] [views] [5492] [1264] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:16:40 AM] [views] [5492] [3644] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:18:34 AM] [views] [5492] [5936] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:18:47 AM] [views] [5492] [2368] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:18:49 AM] [views] [5492] [10184] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:19:08 AM] [views] [5492] [2332] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:19:10 AM] [views] [5492] [2332] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:19:13 AM] [views] [5492] [316] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:19:44 AM] [views] [5492] [5220] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:22:43 AM] [views] [5492] [720] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:22:54 AM] [views] [5492] [5336] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:23:32 AM] [views] [5492] [9264] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:23:55 AM] [views] [5492] [9300] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:24:17 AM] [views] [5492] [368] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:26:59 AM] [views] [5492] [6292] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:27:15 AM] [views] [5492] [7948] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:27:49 AM] [views] [5492] [8332] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:27:59 AM] [views] [5492] [9980] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:28:14 AM] [views] [5492] [2788] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:28:16 AM] [views] [5492] [8852] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:28:24 AM] [views] [5492] [2420] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:29:30 AM] [views] [5492] [8484] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:33:28 AM] [views] [5492] [280] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:33:45 AM] [views] [5492] [6364] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:34:13 AM] [views] [5492] [928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:35:39 AM] [views] [5492] [5220] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:37:24 AM] [views] [5492] [2832] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:37:54 AM] [views] [5492] [9580] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:38:57 AM] [views] [5492] [6760] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:42:01 AM] [views] [5492] [9300] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:42:12 AM] [views] [5492] [4128] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:42:20 AM] [views] [5492] [1992] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:42:52 AM] [views] [5492] [4024] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:43:06 AM] [views] [5492] [2692] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:45:22 AM] [views] [5492] [6860] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:45:32 AM] [views] [5492] [3084] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:46:42 AM] [views] [5492] [2316] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:47:09 AM] [views] [5492] [6700] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:47:20 AM] [views] [5492] [5184] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:47:37 AM] [views] [5492] [9508] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:47:49 AM] [views] [5492] [6864] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:49:37 AM] [views] [5492] [6212] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:50:43 AM] [views] [5492] [5956] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:50:54 AM] [views] [5492] [5256] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:51:27 AM] [views] [5492] [5956] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:51:36 AM] [views] [5492] [3596] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:52:18 AM] [views] [5492] [9896] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:52:39 AM] [views] [5492] [8728] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:52:42 AM] [views] [5492] [8288] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:53:00 AM] [views] [5492] [3484] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:53:27 AM] [views] [5492] [6152] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 03:58:56 AM] [views] [5492] [6928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:02:03 AM] [views] [5492] [9604] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:02:39 AM] [views] [5492] [6400] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:04:03 AM] [views] [5492] [5928] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:04:19 AM] [views] [5492] [4804] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:04:38 AM] [views] [5492] [1676] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:05:54 AM] [views] [5492] [5020] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/hacking/'> hacking
+[INFO] [15/05/2020 04:06:16 AM] [views] [5492] [6584] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/hacking/'> hacking
+[INFO] [15/05/2020 04:06:27 AM] [views] [5492] [6252] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/hacking/'> hacking
+[INFO] [15/05/2020 04:06:34 AM] [views] [5492] [6212] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/hacking/'> hacking
+[INFO] [15/05/2020 04:07:16 AM] [views] [5492] [9500] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:08:20 AM] [views] [5492] [5344] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:09:37 AM] [views] [5492] [9724] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:09:40 AM] [views] [5492] [720] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:09:47 AM] [views] [5492] [9736] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:14:05 AM] [views] [5492] [9840] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:15:01 AM] [views] [5492] [9356] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:15:43 AM] [views] [5492] [1292] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:16:20 AM] [views] [5492] [4664] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:17:58 AM] [views] [5492] [10432] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:18:57 AM] [views] [5492] [9496] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:19:34 AM] [views] [5492] [10936] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:20:12 AM] [views] [5492] [11092] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:20:22 AM] [views] [5492] [11132] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:20:53 AM] [views] [5492] [11188] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:21:18 AM] [views] [5492] [8100] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=2'> None
+[INFO] [15/05/2020 04:21:22 AM] [views] [5492] [10424] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/?page=1'> None
+[INFO] [15/05/2020 04:21:46 AM] [views] [5492] [4228] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:22:30 AM] [views] [5492] [4648] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:22:34 AM] [views] [5492] [1336] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:23:12 AM] [views] [5492] [10656] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:26:39 AM] [views] [5492] [10868] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:28:59 AM] [views] [5492] [11048] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:35:53 AM] [views] [5492] [8080] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:36:20 AM] [views] [5492] [2172] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:36:45 AM] [views] [5492] [3888] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:37:12 AM] [views] [5492] [2240] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:38:17 AM] [views] [5492] [8992] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:38:34 AM] [views] [5492] [5216] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:38:40 AM] [views] [5492] [1120] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:38:49 AM] [views] [5492] [1120] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:38:55 AM] [views] [5492] [5216] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:39:03 AM] [views] [5492] [9724] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:40:17 AM] [views] [5492] [9252] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:41:13 AM] [views] [5492] [9252] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 04:51:25 AM] [views] [5492] [10384] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/development/'> development
+[INFO] [15/05/2020 05:41:26 AM] [views] [5492] [280] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 05:48:40 AM] [views] [11008] [8992] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 05:51:38 AM] [views] [11108] [10680] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 06:03:47 AM] [views] [11108] [11812] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 06:12:34 AM] [views] [11708] [11864] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None
+[INFO] [15/05/2020 06:13:55 AM] [views] [11708] [1676] - Inpput Params - <WSGIRequest: GET '/blogapp/blog_list/'> None

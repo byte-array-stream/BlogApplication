@@ -1,0 +1,12 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="?page=1">&laquo;&laquo; First</a></li>
+      <li class="page-item"><a class="page-link" href="?page= {% if blog_list.has_previous %}{{ blog_list.previous_page_number }}
+                                            {% else %}1{% endif %}">&laquo; Previous</a></li>
+      <li class="page-item"><span class="page-link">Page {{ blog_list.number }} of {{ blog_list.paginator.num_pages }}</span></li>
+      <li class="page-item"><a class="page-link" href="?page={% if blog_list.has_next %}{{ blog_list.next_page_number }}
+                                            {% else %}{{ blog_list.paginator.num_pages }}
+                                            {% endif %}">Next &raquo;</a></li>
+      <li class="page-item"><a class="page-link" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo;&raquo;</a></li>
+  </ul>
+</nav>

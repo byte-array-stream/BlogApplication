@@ -1,0 +1,49 @@
+{% extends 'common/base.html' %}
+  {% block title_block %}
+    {{ post_details.title }}
+  {% endblock %}
+  {% block body_block %}
+    <div class="container">
+      <div>
+        <div class="blog-details-div">
+          <h1>{{ post_details.title }}</h1>
+          <h6>This Post was published on {{ post_details.published_date }} by {{ post_details.author }}</h6>
+        </div>
+        <p>{{ post_details.body | linebreaks }}</p>
+        Tags: {% if post_details.tags %}
+                    {% for tag in post_details.tags.all %}
+                      <a href="{% url 'blog_list_diplay' tag.name %}" class="label-text"><span id="tag-span-decor" class="badge badge-secondary">{{ tag.name }}</span></a>
+                    {% endfor %}
+                {% endif %}
+        <br><br>
+        <a href="/blogapp/share_blog/{{post_details.id}}" class="btn btn-primary btn-lg">Share Blog Via Email</a>
+        <a class="btn btn-primary btn-lg" id="like-button" data-catid="{{ post_details.id }}"><span id="like-count-span">{{like_count}}</span>&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;Like</a>
+        <a class="btn btn-danger btn-lg" id="dislike-button" data-catid="{{ post_details.id }}"><span id="dislike-count-span">{{dislike_count}}</span>&nbsp;<i class="fa fa-thumbs-down"></i>&nbsp;Dislike</a>
+      </div>
+      <br>
+      <div>
+        <h2 class="blog-details-h2">{{ comments_list.count }} Comment{{ comments_list.count | pluralize }}</h2>
+        {% for comment in comments_list %}
+          <span class="blog-details-h5">Comment added by {{ comment.name }} at {{ comment.created_ts }}</span>
+          <!-- linebreaks will retain all the enters, which is given while entering the commenting -->
+          <h6 class="blog-details-h6">{{ comment.comment | linebreaks }}</h6>
+        {% endfor %}
+      </div>
+      <br>
+      <div>
+        {% if is_comment_saved %}
+          <h3>Congrats!! Your comment has been saved.</h3>
+        {% else %}
+          <h3>Please provide your comment..</h3>
+          <form method="POST">
+            <table>
+              {{ comment_form.as_table }}
+              {% csrf_token %}
+            </table>
+            <button type="submit" name="submit" class="btn btn-primary btn-submit">Submit</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+
+  {% endblock %}
